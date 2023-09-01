@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@300;400;500;700&display=swap');
+
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+li {
+    list-style: none;
+}
+
+nav {
+    display: flex;
+    width: 90%;
+    position: fixed;
+    max-height: 75px;
+    top: 2rem;
+    left: 50%;
+    transform: translate(-50%);
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 25px;
+    padding: 0 10px;
+    z-index: 999;
+    background-color: #fff;
+    box-shadow: 8px 5px 7px rgba(0,0 , 0, 0.25);
+}
+
+nav header {
+    font-size: 2rem;
+}
+
+nav header h1 {
+    cursor: pointer;
+    color: rgba(253, 174, 26, 0.95);
+    transition: scale 0.3s ease;
+}
+
+nav header h1:hover {
+    scale: 1.1;
+}
+
+.options {
+    display: flex;
+}
+
+.options ul {
+    display: flex;
+    align-items: center;
+}
+
+
+nav > * {
+    flex: 0 1 0;
+  } 
+
+
+.options ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-radius: 25px;
+    padding: 15px 20px;
+    margin: 0 0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.options ul li:hover{
+    background-color: rgba(253, 174, 26, 0.75);
+}
+
+
+nav .log-in button {
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 800;
+    text-transform: uppercase;
+    background-color: #fff;
+    transition: box-shadow 0.25s ease;
+    white-space: nowrap;
+}
+
+nav .login-btn:hover {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+} 
+
+.menu-icon {
+    display: none;
+}
+
+img {
+    padding-top: 100px;
+    height: 1000px;
+    width: 2000px;
+}
+
+@media screen and (max-width:880px) {
+
+    .menu-icon {
+        display: flex;
+        border: 50%;
+    }
+
+    .menu-icon button {
+        background-color: transparent;
+        font-size: 1.5rem;
+        font-weight: 800;
+        border-radius: 50%;
+        cursor: pointer;
+        padding: 12px;
+        transition: box-shadow 0.3s;
+    } 
+
+    .menu-icon button:hover {
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    nav .log-in {
+        display: none;
+    }
+/* 
+    nav .options {
+        display: none;
+    } */
+
+    nav .options {
+        display: block;
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        left: -150%;
+        bottom: 1px;
+        background-color: #fff;
+        padding: 100px 0;
+        z-index: -1;
+        justify-content: center;
+        transition: left 1s;
+    }
+
+   .options.show {
+        left: 0;
+    }
+
+    nav .options ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+
+    nav .options ul li {
+        width: 100%;
+        height: 100%;
+        font-size: 1.75rem;
+    }
+}
